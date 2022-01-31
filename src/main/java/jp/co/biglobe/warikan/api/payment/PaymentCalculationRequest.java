@@ -2,6 +2,7 @@ package jp.co.biglobe.warikan.api.payment;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
 import lombok.ToString;
 
 /**
@@ -10,6 +11,7 @@ import lombok.ToString;
 @ToString(includeFieldNames = false)
 @EqualsAndHashCode
 @AllArgsConstructor
+@Getter
 public class PaymentCalculationRequest {
 
     /**
@@ -31,4 +33,9 @@ public class PaymentCalculationRequest {
      * 支払い区分が「少なめ」のメンバ数
      */
     private int smallMembers;
+
+    /**
+     * 飲み会のID
+     */
+    private int partyId;
 }
