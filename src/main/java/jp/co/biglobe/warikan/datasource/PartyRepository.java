@@ -10,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import java.util.Objects;
 
 
 public class PartyRepository implements IPartyRepository {
@@ -57,7 +58,7 @@ public class PartyRepository implements IPartyRepository {
         }
 
         Party party;
-        if (largeRatio.equals(null) || mediumRatio.equals(null) || smallRatio.equals(null)) {
+        if (Objects.isNull(largeRatio) || Objects.isNull(mediumRatio) || Objects.isNull(smallRatio)) {
             party = null;
         } else {
             party = Party.of(new PartyId(partyId), new PaymentRatio(largeRatio, mediumRatio, smallRatio));
