@@ -1,4 +1,4 @@
-package jp.co.biglobe.warikan.api.payment;
+package jp.co.biglobe.warikan.api.party;
 
 import jp.co.biglobe.warikan.datasource.PartyRepository;
 import jp.co.biglobe.warikan.domain.repository.IPartyRepository;

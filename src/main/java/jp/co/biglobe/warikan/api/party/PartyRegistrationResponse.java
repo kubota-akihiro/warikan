@@ -1,4 +1,4 @@
-package jp.co.biglobe.warikan.api.payment;
+package jp.co.biglobe.warikan.api.party;
 
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
