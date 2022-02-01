@@ -1,7 +1,7 @@
 package jp.co.biglobe.warikan.api.payment;
 
 import jp.co.biglobe.warikan.datasource.PartyRepository;
-import jp.co.biglobe.warikan.domain.PaymentModel;
+import jp.co.biglobe.warikan.domain.dto.PaymentModel;
 import jp.co.biglobe.warikan.domain.repository.IPartyRepository;
 import jp.co.biglobe.warikan.service.PartyApplicationService;
 import lombok.RequiredArgsConstructor;
