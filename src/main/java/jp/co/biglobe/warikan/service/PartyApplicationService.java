@@ -7,6 +7,8 @@ import jp.co.biglobe.warikan.domain.entity.Party;
 import jp.co.biglobe.warikan.domain.repository.IPartyRepository;
 import jp.co.biglobe.warikan.domain.valueObject.PaymentRatio;
 
+import java.util.Objects;
+
 public class PartyApplicationService {
 
 
@@ -21,6 +23,10 @@ public class PartyApplicationService {
 
     public PaymentModel calculate(int partyId, int largeMembersNum, int mediumMembersNum, int smallMembersNum, int billingAmount) {
         Party party = partyRepository.find(partyId);
+        if (Objects.isNull(party)) {
+            throw new RuntimeException("指定した飲み会のidは存在していません");
+        }
+
         int paymentOfMediumMember = party.calculateMediumPayment(largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
         int paymentOfLargeMember = party.calculateLargePayment(paymentOfMediumMember);
         int paymentOfSmallMember = party.calculateSmallPayment(paymentOfMediumMember);
