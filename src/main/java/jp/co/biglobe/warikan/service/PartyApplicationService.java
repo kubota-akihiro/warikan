@@ -1,6 +1,6 @@
 package jp.co.biglobe.warikan.service;
 
-import jp.co.biglobe.warikan.domain.factory.PartyFactory;
+import jp.co.biglobe.warikan.domain.factory.IPartyFactory;
 import jp.co.biglobe.warikan.domain.service.PartyService;
 import jp.co.biglobe.warikan.domain.dto.PaymentModel;
 import jp.co.biglobe.warikan.domain.entity.Party;
@@ -14,10 +14,12 @@ public class PartyApplicationService {
 
     private IPartyRepository partyRepository;
     private PartyService partyService;
+    private IPartyFactory partyFactory;
 
-    public PartyApplicationService(IPartyRepository partyRepository) {
+    public PartyApplicationService(IPartyRepository partyRepository, IPartyFactory partyFactory) {
         this.partyRepository = partyRepository;
-        partyService = new PartyService(partyRepository);
+        this.partyService = new PartyService(partyRepository);
+        this.partyFactory = partyFactory;
     }
 
 
@@ -37,7 +39,7 @@ public class PartyApplicationService {
 
     public int registerParty(double largeRatio, double mediumRatio, double smallRatio) {
         PaymentRatio paymentRatio = new PaymentRatio(largeRatio, mediumRatio, smallRatio);
-        Party party = PartyFactory.createParty(paymentRatio);
+        Party party = partyFactory.createParty(paymentRatio);
         partyRepository.save(party);
         return party.getPartyId().getValue();
     }

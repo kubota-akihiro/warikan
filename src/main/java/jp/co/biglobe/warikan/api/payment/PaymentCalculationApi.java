@@ -2,6 +2,7 @@ package jp.co.biglobe.warikan.api.payment;
 
 import jp.co.biglobe.warikan.datasource.PartyRepository;
 import jp.co.biglobe.warikan.domain.dto.PaymentModel;
+import jp.co.biglobe.warikan.domain.factory.PartyFactory;
 import jp.co.biglobe.warikan.domain.repository.IPartyRepository;
 import jp.co.biglobe.warikan.service.PartyApplicationService;
 import lombok.RequiredArgsConstructor;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class PaymentCalculationApi {
 
     private IPartyRepository partyRepository = new PartyRepository();
-    private PartyApplicationService partyApplicationService = new PartyApplicationService(partyRepository);
+    private PartyFactory partyFactory = new PartyFactory();
+    private PartyApplicationService partyApplicationService = new PartyApplicationService(partyRepository, partyFactory);
 
     @GetMapping("/payment/calculate")
     public PaymentCalculationResponse calculate(PaymentCalculationRequest request) {

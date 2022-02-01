@@ -1,6 +1,7 @@
 package jp.co.biglobe.warikan.api.party;
 
 import jp.co.biglobe.warikan.datasource.PartyRepository;
+import jp.co.biglobe.warikan.domain.factory.PartyFactory;
 import jp.co.biglobe.warikan.domain.repository.IPartyRepository;
 import jp.co.biglobe.warikan.service.PartyApplicationService;
 import lombok.RequiredArgsConstructor;
@@ -11,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PartyRegistrationApi {
     private IPartyRepository partyRepository = new PartyRepository();
-    private PartyApplicationService partyApplicationService = new PartyApplicationService(partyRepository);
+    private PartyFactory partyFactory = new PartyFactory();
+    private PartyApplicationService partyApplicationService = new PartyApplicationService(partyRepository, partyFactory);
 
     @GetMapping("/party/register")
     public PartyRegistrationResponse registerParty(PartyRegistrationRequest request) {

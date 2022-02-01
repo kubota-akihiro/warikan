@@ -11,11 +11,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class PartyFactory {
+public class PartyFactory implements IPartyFactory {
 
     private static final File FILE = new File("party_data.csv");
 
-    public static Party createParty(PaymentRatio paymentRatio) {
+    public Party createParty(PaymentRatio paymentRatio) {
 
         List<Integer> idList = new ArrayList<>();
         try (
