@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PaymentCalculationApi {
 
-    IPartyRepository partyRepository = new PartyRepository();
+    private IPartyRepository partyRepository = new PartyRepository();
     private PartyApplicationService partyApplicationService = new PartyApplicationService(partyRepository);
 
     @GetMapping("/payment/calculate")
@@ -27,20 +27,6 @@ public class PaymentCalculationApi {
         PaymentModel paymentModel = partyApplicationService.calculate(partyId, largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
 
         return new PaymentCalculationResponse(paymentModel.getPaymentOfLargeMember(), paymentModel.getPaymentOfMediumMember(), paymentModel.getPaymentOfSmallMember(), paymentModel.getBalanceDue());
-    }
-
-
-    @GetMapping("/party/register")
-    public PartyRegistrationResponse registerParty(PartyRegistrationRequest request) {
-
-        double largeRatio = request.getLargeRatio();
-        double mediumRatio = request.getMediumRatio();
-        double smallRatio = request.getSmallRatio();
-
-        int createdPartyId = partyApplicationService.registerParty(largeRatio, mediumRatio, smallRatio);
-
-        return new PartyRegistrationResponse(createdPartyId);
-
     }
 
 }

@@ -16,6 +16,7 @@ public class PartyRepository implements IPartyRepository {
 
     private static final File FILE = new File("party_data.csv");
 
+    @Override
     public void save(@NonNull Party party) {
         try (FileWriter filewriter = new FileWriter(FILE, true)) {
             filewriter.write(String.format(
@@ -30,6 +31,7 @@ public class PartyRepository implements IPartyRepository {
         }
     }
 
+    @Override
     public Party find(@NonNull int partyId) {
 
         Double largeRatio = null;
