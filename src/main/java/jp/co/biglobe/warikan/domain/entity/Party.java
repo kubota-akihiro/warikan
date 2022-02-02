@@ -5,6 +5,8 @@ import jp.co.biglobe.warikan.domain.valueObject.PaymentRatio;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import static java.lang.Math.round;
+
 @Getter
 @AllArgsConstructor
 public class Party {
@@ -24,17 +26,17 @@ public class Party {
 
         double weightSum = mediumRatio * mediumMembersNum + largeRatio * largeMembersNum + smallRatio * smallMembersNum;
 
-        return (int) (billingAmount / weightSum);
+        return (int) round(billingAmount / weightSum);
     }
 
     public int calculateLargePayment(int paymentOfMediumMember) {
         double largeRatio = paymentRatio.getLargeRatio();
-        return (int) (paymentOfMediumMember * largeRatio);
+        return (int) round(paymentOfMediumMember * largeRatio);
     }
 
     public int calculateSmallPayment(int paymentOfMediumMember) {
         double smallRatio = paymentRatio.getSmallRatio();
-        return (int) (paymentOfMediumMember * smallRatio);
+        return (int) round(paymentOfMediumMember * smallRatio);
     }
 
     public int calculateBalanceDue(int largeMembersNum, int mediumMembersNum, int smallMembersNum, int billingAmount, int paymentOfMediumMember, int paymentOfLargeMember, int paymentOfSmallMember) {

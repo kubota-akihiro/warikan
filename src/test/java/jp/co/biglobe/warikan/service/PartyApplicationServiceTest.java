@@ -22,6 +22,8 @@ public class PartyApplicationServiceTest {
                 7500, 6250, 5000, 0);
 //        assertCalculatePayment(3, 1, 2, 0, 20000,
 //                7500, 6250, 5000, 0);
+        assertCalculatePayment(1, 1, 2, 2, 30000,
+                7500, 6250, 5000, 0);
 
 
     }
