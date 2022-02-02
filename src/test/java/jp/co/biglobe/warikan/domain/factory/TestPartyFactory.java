@@ -7,9 +7,9 @@ import jp.co.biglobe.warikan.domain.valueObject.PaymentRatio;
 public class TestPartyFactory implements IPartyFactory {
     private static int currentId;
 
-    public Party createParty(PaymentRatio paymentRatio){
+    public Party createParty(PaymentRatio paymentRatio) {
         currentId++;
-        return Party.of(
+        return Party.newInstance(
                 new PartyId(currentId),
                 paymentRatio
         );

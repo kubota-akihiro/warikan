@@ -13,7 +13,7 @@ public class Party {
 
     private PaymentRatio paymentRatio;
 
-    public static Party of(PartyId partyId, PaymentRatio paymentRatio) {
+    public static Party newInstance(PartyId partyId, PaymentRatio paymentRatio) {
         return new Party(partyId, paymentRatio);
     }
 

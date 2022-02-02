@@ -21,10 +21,10 @@ public class TestPartyRepository implements IPartyRepository {
     @Override
     public Party find(int partyId) {
         Party party;
-        if(Objects.isNull(map.get(new PartyId(partyId)))){
+        if (Objects.isNull(map.get(new PartyId(partyId)))) {
             party = null;
-        }else {
-            party = Party.of(new PartyId(partyId), map.get(new PartyId(partyId)));
+        } else {
+            party = Party.newInstance(new PartyId(partyId), map.get(new PartyId(partyId)));
         }
         return party;
     }
