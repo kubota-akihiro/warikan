@@ -8,12 +8,21 @@ public class PaymentRatio {
     private double MediumRatio = 1;
     private double smallRatio = 0.8;
 
-    public PaymentRatio() {
+    private PaymentRatio() {
     }
 
-    public PaymentRatio(double largeRatio, double MediumRatio, double smallRatio) {
+    private PaymentRatio(double largeRatio, double MediumRatio, double smallRatio) {
         this.largeRatio = largeRatio;
         this.MediumRatio = MediumRatio;
         this.smallRatio = smallRatio;
     }
+
+    public static PaymentRatio newInstance() {
+        return new PaymentRatio();
+    }
+
+    public static PaymentRatio newInstance(double largeRatio, double MediumRatio, double smallRatio) {
+        return new PaymentRatio(largeRatio, MediumRatio, smallRatio);
+    }
+
 }

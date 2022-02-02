@@ -38,7 +38,7 @@ public class PartyApplicationService {
     }
 
     public int registerParty(double largeRatio, double mediumRatio, double smallRatio) {
-        PaymentRatio paymentRatio = new PaymentRatio(largeRatio, mediumRatio, smallRatio);
+        PaymentRatio paymentRatio = PaymentRatio.newInstance(largeRatio, mediumRatio, smallRatio);
         Party party = partyFactory.createParty(paymentRatio);
         partyRepository.save(party);
         return party.getPartyId().getValue();

@@ -10,7 +10,7 @@ public class TestPartyFactory implements IPartyFactory {
     public Party createParty(PaymentRatio paymentRatio) {
         currentId++;
         return Party.newInstance(
-                new PartyId(currentId),
+                PartyId.newInstance(currentId),
                 paymentRatio
         );
     }

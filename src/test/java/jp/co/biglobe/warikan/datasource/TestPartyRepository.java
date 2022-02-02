@@ -20,11 +20,13 @@ public class TestPartyRepository implements IPartyRepository {
 
     @Override
     public Party find(int partyId) {
+        PartyId tempPartyId = PartyId.newInstance(partyId);
+        PaymentRatio paymentRatio = map.get(tempPartyId);
         Party party;
-        if (Objects.isNull(map.get(new PartyId(partyId)))) {
+        if (Objects.isNull(paymentRatio)) {
             party = null;
         } else {
-            party = Party.newInstance(new PartyId(partyId), map.get(new PartyId(partyId)));
+            party = Party.newInstance(tempPartyId, paymentRatio);
         }
         return party;
     }

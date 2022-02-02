@@ -42,7 +42,7 @@ public class PartyFactory implements IPartyFactory {
 
 
         return Party.newInstance(
-                new PartyId(partyId),
+                PartyId.newInstance(partyId),
                 paymentRatio
         );
 

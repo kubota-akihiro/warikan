@@ -61,7 +61,7 @@ public class PartyRepository implements IPartyRepository {
         if (Objects.isNull(largeRatio) || Objects.isNull(mediumRatio) || Objects.isNull(smallRatio)) {
             party = null;
         } else {
-            party = Party.newInstance(new PartyId(partyId), new PaymentRatio(largeRatio, mediumRatio, smallRatio));
+            party = Party.newInstance(PartyId.newInstance(partyId), PaymentRatio.newInstance(largeRatio, mediumRatio, smallRatio));
         }
 
         return party;

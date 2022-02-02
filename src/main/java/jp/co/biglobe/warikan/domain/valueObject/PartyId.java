@@ -10,6 +10,10 @@ import java.util.Objects;
 public class PartyId {
     private int value;
 
+    public static PartyId newInstance(int partyId) {
+        return new PartyId(partyId);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
