@@ -16,7 +16,7 @@ public class PartyRegistrationApi {
     private PartyApplicationService partyApplicationService = new PartyApplicationService(partyRepository, partyFactory);
 
     @GetMapping("/party/register")
-    public PartyRegistrationResponse registerParty(PartyRegistrationRequest request) {
+    public PartyRegistrationResponse register(PartyRegistrationRequest request) {
 
         double largeRatio = request.getLargeRatio();
         double mediumRatio = request.getMediumRatio();
