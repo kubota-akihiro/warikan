@@ -14,8 +14,7 @@ public class PartyApplicationServiceTest {
     @Test
     public void calculatePayment() {
         partyApplicationService.registerParty(1.2, 1.0, 0.8);
-        PaymentModel paymentModel = partyApplicationService.calculate(1, 1, 2, 0, 20000);
-
+        PaymentModel paymentModel = partyApplicationService.calculatePayment(1, 1, 2, 0, 20000);
         assertEquals(7500, paymentModel.getPaymentOfLargeMember());
         assertEquals(6250, paymentModel.getPaymentOfMediumMember());
         assertEquals(0, paymentModel.getBalanceDue());

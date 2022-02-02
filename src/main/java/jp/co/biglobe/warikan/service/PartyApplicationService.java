@@ -23,7 +23,7 @@ public class PartyApplicationService {
     }
 
 
-    public PaymentModel calculate(int partyId, int largeMembersNum, int mediumMembersNum, int smallMembersNum, int billingAmount) {
+    public PaymentModel calculatePayment(int partyId, int largeMembersNum, int mediumMembersNum, int smallMembersNum, int billingAmount) {
         Party party = partyRepository.find(partyId);
         if (Objects.isNull(party)) {
             throw new RuntimeException("指定した飲み会のidは存在していません");

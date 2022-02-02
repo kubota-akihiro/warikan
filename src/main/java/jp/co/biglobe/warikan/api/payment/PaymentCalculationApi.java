@@ -26,7 +26,7 @@ public class PaymentCalculationApi {
         int billingAmount = request.getBillingAmount();
         int partyId = request.getPartyId();
 
-        PaymentModel paymentModel = partyApplicationService.calculate(partyId, largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
+        PaymentModel paymentModel = partyApplicationService.calculatePayment(partyId, largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
 
         return new PaymentCalculationResponse(paymentModel.getPaymentOfLargeMember(), paymentModel.getPaymentOfMediumMember(), paymentModel.getPaymentOfSmallMember(), paymentModel.getBalanceDue());
     }
