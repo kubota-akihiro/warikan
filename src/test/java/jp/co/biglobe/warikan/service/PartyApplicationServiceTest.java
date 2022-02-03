@@ -26,6 +26,10 @@ public class PartyApplicationServiceTest {
                 7500, 6250, 5000, 0);
         assertCalculatePayment(1, 1, 2, 2, 35000,
                 8750, 7292, 5834, -2);
+        assertCalculatePayment(1, 1, 2, 2, 20000,
+                5000, 4167, 3334, -2);
+        assertCalculatePayment(2, 5, 3, 4, 20000,
+                1967, 1639, 1311, 4);
 
         partyApplicationService.registerParty(1.0, 1.0, 1.0);
         assertCalculatePayment(3, 5, 2, 3, 30000,
