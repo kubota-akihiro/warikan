@@ -6,6 +6,7 @@ import jp.co.biglobe.warikan.domain.party.dto.PaymentModel;
 import jp.co.biglobe.warikan.domain.party.entity.Party;
 import jp.co.biglobe.warikan.domain.party.repository.IPartyRepository;
 import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
+import jp.co.biglobe.warikan.domain.payment.entity.Payment;
 
 import java.util.Objects;
 
@@ -29,10 +30,11 @@ public class PartyApplicationService {
             throw new RuntimeException("指定した飲み会のidは存在していません");
         }
 
-        int paymentOfMediumMember = party.calculateMediumPayment(largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
-        int paymentOfLargeMember = party.calculateLargePayment(paymentOfMediumMember);
-        int paymentOfSmallMember = party.calculateSmallPayment(paymentOfMediumMember);
-        int balanceDue = party.calculateBalanceDue(largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount, paymentOfMediumMember, paymentOfLargeMember, paymentOfSmallMember);
+        Payment payment = new Payment(party, largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
+        int paymentOfMediumMember = payment.getMediumPayment().getValue();
+        int paymentOfLargeMember = payment.getLargePayment().getValue();
+        int paymentOfSmallMember = payment.getSmallPayment().getValue();
+        int balanceDue = payment.getBalanceDue().getValue();
 
         return new PaymentModel(paymentOfMediumMember, paymentOfLargeMember, paymentOfSmallMember, balanceDue);
     }

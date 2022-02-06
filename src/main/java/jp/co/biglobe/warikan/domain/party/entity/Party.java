@@ -19,27 +19,4 @@ public class Party {
         return new Party(partyId, paymentRatio);
     }
 
-    public int calculateMediumPayment(int largeMembersNum, int mediumMembersNum, int smallMembersNum, int billingAmount) {
-        double largeRatio = paymentRatio.getLargeRatio();
-        double mediumRatio = paymentRatio.getMediumRatio();
-        double smallRatio = paymentRatio.getSmallRatio();
-
-        double weightSum = mediumRatio * mediumMembersNum + largeRatio * largeMembersNum + smallRatio * smallMembersNum;
-
-        return (int) round(billingAmount / weightSum);
-    }
-
-    public int calculateLargePayment(int paymentOfMediumMember) {
-        double largeRatio = paymentRatio.getLargeRatio();
-        return (int) round(paymentOfMediumMember * largeRatio);
-    }
-
-    public int calculateSmallPayment(int paymentOfMediumMember) {
-        double smallRatio = paymentRatio.getSmallRatio();
-        return (int) round(paymentOfMediumMember * smallRatio);
-    }
-
-    public int calculateBalanceDue(int largeMembersNum, int mediumMembersNum, int smallMembersNum, int billingAmount, int paymentOfMediumMember, int paymentOfLargeMember, int paymentOfSmallMember) {
-        return billingAmount - (paymentOfMediumMember * mediumMembersNum + paymentOfLargeMember * largeMembersNum + paymentOfSmallMember * smallMembersNum);
-    }
 }
