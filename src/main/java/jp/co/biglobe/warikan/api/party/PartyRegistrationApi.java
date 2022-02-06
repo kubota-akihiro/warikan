@@ -1,8 +1,8 @@
 package jp.co.biglobe.warikan.api.party;
 
 import jp.co.biglobe.warikan.datasource.PartyRepository;
-import jp.co.biglobe.warikan.domain.factory.PartyFactory;
-import jp.co.biglobe.warikan.domain.repository.IPartyRepository;
+import jp.co.biglobe.warikan.domain.party.factory.PartyFactory;
+import jp.co.biglobe.warikan.domain.party.repository.IPartyRepository;
 import jp.co.biglobe.warikan.service.PartyApplicationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

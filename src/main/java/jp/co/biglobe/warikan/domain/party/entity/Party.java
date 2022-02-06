@@ -1,7 +1,7 @@
-package jp.co.biglobe.warikan.domain.entity;
+package jp.co.biglobe.warikan.domain.party.entity;
 
-import jp.co.biglobe.warikan.domain.valueObject.PartyId;
-import jp.co.biglobe.warikan.domain.valueObject.PaymentRatio;
+import jp.co.biglobe.warikan.domain.party.valueObject.PartyId;
+import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 

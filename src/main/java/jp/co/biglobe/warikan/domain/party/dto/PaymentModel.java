@@ -1,4 +1,4 @@
-package jp.co.biglobe.warikan.domain.dto;
+package jp.co.biglobe.warikan.domain.party.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

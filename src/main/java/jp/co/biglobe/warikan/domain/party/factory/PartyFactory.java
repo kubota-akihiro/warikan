@@ -1,8 +1,8 @@
-package jp.co.biglobe.warikan.domain.factory;
+package jp.co.biglobe.warikan.domain.party.factory;
 
-import jp.co.biglobe.warikan.domain.entity.Party;
-import jp.co.biglobe.warikan.domain.valueObject.PartyId;
-import jp.co.biglobe.warikan.domain.valueObject.PaymentRatio;
+import jp.co.biglobe.warikan.domain.party.entity.Party;
+import jp.co.biglobe.warikan.domain.party.valueObject.PartyId;
+import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
 
 import java.io.BufferedReader;
 import java.io.File;

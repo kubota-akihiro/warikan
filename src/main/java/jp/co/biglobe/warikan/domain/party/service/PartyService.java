@@ -1,6 +1,6 @@
-package jp.co.biglobe.warikan.domain.service;
+package jp.co.biglobe.warikan.domain.party.service;
 
-import jp.co.biglobe.warikan.domain.repository.IPartyRepository;
+import jp.co.biglobe.warikan.domain.party.repository.IPartyRepository;
 import lombok.AllArgsConstructor;
 
 //ドメインサービス

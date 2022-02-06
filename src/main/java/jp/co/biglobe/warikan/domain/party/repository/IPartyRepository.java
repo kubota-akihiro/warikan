@@ -1,6 +1,6 @@
-package jp.co.biglobe.warikan.domain.repository;
+package jp.co.biglobe.warikan.domain.party.repository;
 
-import jp.co.biglobe.warikan.domain.entity.Party;
+import jp.co.biglobe.warikan.domain.party.entity.Party;
 import lombok.NonNull;
 
 public interface IPartyRepository {
