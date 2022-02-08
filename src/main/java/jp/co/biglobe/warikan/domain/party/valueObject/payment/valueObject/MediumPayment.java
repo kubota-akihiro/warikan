@@ -1,4 +1,4 @@
-package jp.co.biglobe.warikan.domain.payment.valueObject;
+package jp.co.biglobe.warikan.domain.party.valueObject.payment.valueObject;
 
 import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
 import lombok.AllArgsConstructor;

@@ -5,7 +5,7 @@ import jp.co.biglobe.warikan.domain.party.service.PartyService;
 import jp.co.biglobe.warikan.domain.party.entity.Party;
 import jp.co.biglobe.warikan.domain.party.repository.IPartyRepository;
 import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
-import jp.co.biglobe.warikan.domain.payment.entity.Payment;
+import jp.co.biglobe.warikan.domain.party.valueObject.payment.Payment;
 
 import java.util.Objects;
 

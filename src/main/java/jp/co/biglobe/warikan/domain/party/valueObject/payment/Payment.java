@@ -1,10 +1,10 @@
-package jp.co.biglobe.warikan.domain.payment.entity;
+package jp.co.biglobe.warikan.domain.party.valueObject.payment;
 
 import jp.co.biglobe.warikan.domain.party.entity.Party;
-import jp.co.biglobe.warikan.domain.payment.valueObject.BalanceDue;
-import jp.co.biglobe.warikan.domain.payment.valueObject.LargePayment;
-import jp.co.biglobe.warikan.domain.payment.valueObject.MediumPayment;
-import jp.co.biglobe.warikan.domain.payment.valueObject.SmallPayment;
+import jp.co.biglobe.warikan.domain.party.valueObject.payment.valueObject.LargePayment;
+import jp.co.biglobe.warikan.domain.party.valueObject.payment.valueObject.MediumPayment;
+import jp.co.biglobe.warikan.domain.party.valueObject.payment.valueObject.SmallPayment;
+import jp.co.biglobe.warikan.domain.party.valueObject.payment.valueObject.BalanceDue;
 import lombok.Getter;
 
 @Getter
