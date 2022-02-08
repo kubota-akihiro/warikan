@@ -1,4 +1,4 @@
-package jp.co.biglobe.warikan.domain.payment.dto;
+package jp.co.biglobe.warikan.service;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -3,7 +3,6 @@ package jp.co.biglobe.warikan.service;
 
 import jp.co.biglobe.warikan.datasource.TestPartyRepository;
 import jp.co.biglobe.warikan.domain.factory.TestPartyFactory;
-import jp.co.biglobe.warikan.domain.payment.dto.PaymentModel;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
