@@ -2,7 +2,7 @@ package jp.co.biglobe.warikan.service;
 
 import jp.co.biglobe.warikan.domain.party.factory.IPartyFactory;
 import jp.co.biglobe.warikan.domain.party.service.PartyService;
-import jp.co.biglobe.warikan.domain.party.dto.PaymentModel;
+import jp.co.biglobe.warikan.domain.payment.dto.PaymentModel;
 import jp.co.biglobe.warikan.domain.party.entity.Party;
 import jp.co.biglobe.warikan.domain.party.repository.IPartyRepository;
 import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
