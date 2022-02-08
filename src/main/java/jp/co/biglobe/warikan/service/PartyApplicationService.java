@@ -29,7 +29,7 @@ public class PartyApplicationService {
             throw new RuntimeException("指定した飲み会のidは存在していません");
         }
 
-        Payment payment = new Payment(party, largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
+        Payment payment = new Payment(party.getPaymentRatio(), largeMembersNum, mediumMembersNum, smallMembersNum, billingAmount);
         int paymentOfMediumMember = payment.getMediumPayment().getValue();
         int paymentOfLargeMember = payment.getLargePayment().getValue();
         int paymentOfSmallMember = payment.getSmallPayment().getValue();
