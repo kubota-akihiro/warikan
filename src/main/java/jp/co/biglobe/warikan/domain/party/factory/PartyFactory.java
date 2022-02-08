@@ -3,6 +3,7 @@ package jp.co.biglobe.warikan.domain.party.factory;
 import jp.co.biglobe.warikan.domain.party.entity.Party;
 import jp.co.biglobe.warikan.domain.party.valueObject.PartyId;
 import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
+import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -11,6 +12,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@Service
 public class PartyFactory implements IPartyFactory {
 
     private static final File FILE = new File("party_data.csv");

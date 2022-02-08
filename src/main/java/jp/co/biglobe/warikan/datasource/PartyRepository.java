@@ -5,6 +5,7 @@ import jp.co.biglobe.warikan.domain.party.repository.IPartyRepository;
 import jp.co.biglobe.warikan.domain.party.valueObject.PartyId;
 import jp.co.biglobe.warikan.domain.party.valueObject.PaymentRatio;
 import lombok.NonNull;
+import org.springframework.stereotype.Repository;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -12,7 +13,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Objects;
 
-
+@Repository
 public class PartyRepository implements IPartyRepository {
 
     private static final File FILE = new File("party_data.csv");

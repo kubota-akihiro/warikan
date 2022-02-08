@@ -1,11 +1,9 @@
 package jp.co.biglobe.warikan.api.payment;
 
-import jp.co.biglobe.warikan.datasource.PartyRepository;
 import jp.co.biglobe.warikan.service.PaymentModel;
-import jp.co.biglobe.warikan.domain.party.factory.PartyFactory;
-import jp.co.biglobe.warikan.domain.party.repository.IPartyRepository;
 import jp.co.biglobe.warikan.service.PartyApplicationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class PaymentCalculationApi {
 
-    private IPartyRepository partyRepository = new PartyRepository();
-    private PartyFactory partyFactory = new PartyFactory();
-    private PartyApplicationService partyApplicationService = new PartyApplicationService(partyRepository, partyFactory);
+    @Autowired
+    private PartyApplicationService partyApplicationService;
 
     @GetMapping("/payment/calculate")
     public PaymentCalculationResponse calculate(PaymentCalculationRequest request) {
